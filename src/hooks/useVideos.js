@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import youTube from '../apis/youTube'
 
 const useVideos = (defaultSearchTerm) => {
@@ -6,7 +6,7 @@ const useVideos = (defaultSearchTerm) => {
 
     useEffect(() => {
         search(defaultSearchTerm);
-    }, []);
+    }, [defaultSearchTerm]);
 
     const search = async term => {
         const response = await youTube.get('search', {

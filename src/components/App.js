@@ -7,25 +7,11 @@ import VideoList from './VideoList';
 
 const App = () => {
 
-    const [videos, setVideos] = useState([]);
+
     const [selectedVideo, setSelectedVideo] = useState(null);
 
-    useEffect(() => {
-        onTermSubmit('Tesla');
-    }, []);
+    //setSelectedVideo(response.data.items[0]);
 
-    const onTermSubmit = async term => {
-        const response = await youTube.get('search', {
-            params: {
-                q: term
-            }
-        });
-        setVideos(response.data.items);
-        setSelectedVideo(response.data.items[0]);
-    }
-    // const onVideoSelect = (video) => {
-    //     setSelectedVideo(video);
-    // }
 
     return (
         <div className="ui container">
